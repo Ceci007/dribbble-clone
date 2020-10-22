@@ -22,9 +22,19 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'rubocop', '~>0.81.0'
+gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
+gem 'bulma-rails', '~> 0.9.0'
+gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'carrierwave', '~> 2.1'
+gem 'simple_form', '~> 5.0', '>= 5.0.3'
+gem "mini_magick"
+gem 'impressionist', '~> 1.6'
+gem 'jquery-rails', '~> 4.4'
+gem 'gravatar_image_tag'
+gem 'acts_as_votable', '~> 0.11.1'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -37,6 +47,9 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
+  gem 'better_errors', '~> 2.4'
+  gem 'guard', '~> 2.14', '>= 2.14.1'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 
 group :test do

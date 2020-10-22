@@ -4,12 +4,29 @@
     <title>DribbbleClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <% if flash[:notice] %>
+      <div class="container my-10">
+        <div class="notification is-primary global-notification" >
+          <p class="notice"><%= notice %></p>
+          <button class="delete" onclick="this.parentElement.style.display='none'" ></button>
+        </div>
+      </div>
+    <% end %>
+    <% if flash[:alert] %>
+      <div class="container my-10">
+        <div class="notification is-danger global-notification" >
+          <p class="alert"><%= alert %></p>
+          <button class="delete" onclick="this.parentElement.style.display='none'" ></button>
+        </div>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>
