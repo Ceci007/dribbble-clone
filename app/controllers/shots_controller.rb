@@ -1,10 +1,11 @@
 class ShotsController < ApplicationController
   before_action :set_shot, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
 
   # GET /shots
   # GET /shots.json
   def index
-    @shots = Shot.all
+    @shots = Shot.all.order('created_at DESC')
   end
 
   # GET /shots/1
@@ -14,7 +15,7 @@ class ShotsController < ApplicationController
 
   # GET /shots/new
   def new
-    @shot = Shot.new
+    @shot = current_user.shots.build
   end
 
   # GET /shots/1/edit
@@ -24,7 +25,7 @@ class ShotsController < ApplicationController
   # POST /shots
   # POST /shots.json
   def create
-    @shot = Shot.new(shot_params)
+    @shot = current_user.shots.build(shot_params)
 
     respond_to do |format|
       if @shot.save
