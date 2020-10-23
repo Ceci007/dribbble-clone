@@ -78,9 +78,18 @@
 
  .file-input { visibility: hidden; }
 
+ .d-flex {
+   display: flex;
+   align-items: center;
+ }
+
+ .mr {
+   margin-right: 10px;
+ }
+
  .image-centered {
-   display: block !important;
-   margin: 0 auto !important;
+   display: block;
+   margin: 0 auto;
  }
 
  .my-10 {
