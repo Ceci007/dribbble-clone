@@ -2,191 +2,215 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .hero.is-dark {
-	background-color: #282828 !important;
+  background-color: #282828 !important;
 }
 
 .shot-wrapper {
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
-	border-radius: 2px;
-	padding: 10px;
-	background: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  border-radius: 2px;
+  padding: 10px;
+  background: white;
 }
+
 .shots {
-	display: grid;
-	justify-content: center;
-	grid-template-columns: repeat(5, 1fr);
-	grid-gap: 1rem;
-	@media only screen and (min-width: 1600px) {
-		grid-template-columns: repeat(6, 1fr);
-	}
-	@media only screen and (max-width: 1300px) {
-		grid-template-columns: repeat(4, 1fr);
-	}
-	@media only screen and (max-width: 1100px) { 
-		grid-template-columns: repeat(3, 1fr);
-	}
-	@media only screen and (max-width: 800px) {
-		grid-template-columns: 1fr 1fr;
-	}
-	@media only screen and (max-width: 400px) {
-		grid-template-columns: 1fr;
-	}
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 1rem;
+
+  @media only screen and (min-width: 1600px) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  @media only screen and (max-width: 1300px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media only screen and (max-width: 1100px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media only screen and (max-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media only screen and (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
 }
+
 .shot {
-	position: relative;
-	display: block;
-	color: #333 !important;
+  position: relative;
+  display: block;
+  color: #333 !important;
   width: 265px;
   height: 200px;
-	margin: 0 auto;
-	overflow: hidden;
-	
-	& img {
-		width: 100%;
-  	height: 100%;
-  	margin: 0 auto;
-	}
+  margin: 0 auto;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+}
+
+.shot-time {
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
 }
 
 .shot-data {
-	position: absolute;
+  position: absolute;
   top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
-	display: none;
-	visibility: hidden;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: none;
+  visibility: hidden;
   text-align: justify;
-  background: rgba(255,255,255,0.8);
+  background: rgba(255, 255, 255, 0.8);
   width: 100%;
   height: 100%;
   transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
-	-webkit-transition: all 0.3s ease;
-	padding: 10px;
+  -webkit-transition: all 0.3s ease;
+  padding: 10px;
 
-	p, h3 {
-		color: #333;
-		text-align: left;
-	}
-	.shot-title {
-		font-weight: bold;
-	}
-	.shot-description {
-		font-size: .9rem;
-	}
-	.shot-time {
-		font-size: .8rem;
-		padding-top: .5rem;
-	}
+  p,
+  h3 {
+    color: #333;
+    text-align: left;
+  }
+
+  .shot-title {
+    font-weight: bold;
+  }
+
+  .shot-description {
+    font-size: 0.9rem;
+  }
 }
 
-.shot:hover .shot-data
-{
-	display: block;
-	visibility: visible;
-	padding: 10px;
-	top: 0;
-	left: 0;
-	bottom: 0;
-	right: 0;
+.shot:hover .shot-data {
+  display: block;
+  visibility: visible;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }
 
 .user-data {
-	padding: 1rem 0 0 0;
+  padding: 1rem 0 0 0;
 }
 
 .user-name {
-	display: inline-block;
-	position: relative;
-	top: -4px;
-	padding-left: 5px;
+  display: inline-block;
+  position: relative;
+  top: -4px;
+  padding-left: 5px;
 }
 
 .user-thumb {
-	display: inline-block;
-	img {
-		border-radius: 50%;
-	}
+  display: inline-block;
+
+  img {
+    border-radius: 50%;
+  }
 }
 
 .thumb {
-	display: block;
-	margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .by,
 .shot-time {
-	display: inline-block;
-	position: relative;
-	top: -4px;
+  display: inline-block;
+  position: relative;
+  top: -4px;
 }
 
 .shot-analytics {
-	text-align: right;
-	@media only screen and (max-width: 800px) {
-		text-align: right;
-		.level-item {
-			display: inline-block;
-			padding: 0 4px;
-		}
-		.level-left+.level-right {
-			margin: 0;
-			padding: 0;
-		}
-		.level-item:not(:last-child) {
-			margin: 0;
-		}
-	}
+  text-align: right;
+  font-size: 0.9rem;
+
+  .icon,
+  a {
+    color: #aaa;
+  }
+
+  @media only screen and (max-width: 800px) {
+    text-align: right;
+
+    .level-item {
+      display: inline-block;
+      padding: 0 4px;
+    }
+
+    .level-left + .level-right {
+      margin: 0;
+      padding: 0;
+    }
+
+    .level-item:not(:last-child) {
+      margin: 0;
+    }
+  }
+}
+
+.panel.show-shot-analytics {
+  font-size: 0.9rem;
+
+  a { color: #333; }
+
+  .icon {
+    padding-right: 0.5rem;
+    color: #aaa;
+  }
+
+  .likes .vote_count {
+    margin-left: -4px;
+  }
 }
 
 .shot-analytics,
 .panel.show-shot-analytics {
-	font-size: .9rem;
-	a,
-	.icon {
-		color: #aaa;
-	}
-	.icon:hover,
-	a:hover {
-		color: darken(#aaa, 25%);
-	}
+  a:hover,
+  .icon:hover {
+    color: rgba(170, 170, 170, 0.25);
+  }
 }
-
-.panel.show-shot-analytics {
-	a { color: #333; }
-	.icon {
-		padding-right: .5rem;
-	}
-	.likes .vote_count {
-		margin-left: -4px;
-	}
-}
-
 
 .shot-container {
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
-	border-radius: 2px;
-	padding: 40px;
-	background: white;
-	@media only screen and (max-width: 800px) {
-		padding: 10px;
-	}
-	.content,
-	.comments {
-		margin-top: 1rem;
-		padding: 20px;
-		@media only screen and (max-width: 800px) {
-			padding: 0;
-		}
-	}
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
+  border-radius: 2px;
+  padding: 40px;
+  background: white;
+
+  @media only screen and (max-width: 800px) {
+    padding: 10px;
+  }
+
+  .content,
+  .comments {
+    margin-top: 1rem;
+    padding: 20px;
+
+    @media only screen and (max-width: 800px) {
+      padding: 0;
+    }
+  }
 }
 
 .shot-full {
-	text-align: center;
-	& img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+  text-align: center;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }

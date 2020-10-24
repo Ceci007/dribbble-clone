@@ -13,88 +13,93 @@
  *= require_tree .
  *= require_self
  */
- $pink: #ea4c89;
- $pink-invert: #fff;
- 
- $primary: $pink;
- $primary-invert: $pink-invert;
- $link: $primary;
- $link-hover: darken($primary, 20%);
- 
- 
- @import "bulma";
- 
- html, body {
-   min-height: 100vh;
-   background-color: #f4f4f4;
- }
+$pink: #ea4c89;
+$pink-invert: #fff;
 
- 
- #drop_zone {
-   position: relative;
-   padding: 3rem 0;
-   border: 2px dashed #ccc;
-   text-align: center;
-   border-radius: 6px;
-   background-color: #f8f8f8;
-   z-index: 100;
-   &.dragging::before {
-     content: "";
-     position: absolute;
-     left: 0; width: 100%;
-     top: 0; height: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-size: 1.5em;
-     background-color: rgba($primary, .3);
-     pointer-events: none;
-     z-index: 99;
-   }
-   &.fire::before {
-     content: "";
-     position: absolute;
-     left: 0; width: 100%;
-     top: 0; height: 100%;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     font-size: 1.5em;
-     background-color: rgba($green, .3);
-     pointer-events: none;
-     z-index: 99;
-   }
- }
- 
- .notification {
-   border-radius: none;
- }
- .notification:not(:last-child) {
-   margin-bottom: 0;
- }
+$primary: $pink;
+$primary-invert: $pink-invert;
+$link: $primary;
+$link-hover: darken($primary, 20%);
 
- .file-input { visibility: hidden; }
+@import "bulma";
 
- .d-flex {
-   display: flex;
-   align-items: center;
- }
+html,
+body {
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
 
- .mr {
-   margin-right: 10px;
- }
+#drop_zone {
+  position: relative;
+  padding: 3rem 0;
+  border: 2px dashed #ccc;
+  text-align: center;
+  border-radius: 6px;
+  background-color: #f8f8f8;
+  z-index: 100;
 
- .image-centered {
-   display: block;
-   margin: 0 auto;
-   margin-bottom: 20px;
- }
+  &.dragging::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-color: rgba($primary, 0.3);
+    pointer-events: none;
+    z-index: 99;
+  }
 
- .my-10 {
-   margin: 15px 0;
- }
+  &.fire::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-color: rgba($green, 0.3);
+    pointer-events: none;
+    z-index: 99;
+  }
+}
+
+.notification {
+  border-radius: 0;
+}
+
+.notification:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.file-input { visibility: hidden; }
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.mr {
+  margin-right: 10px;
+}
+
+.image-centered {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.my-10 {
+  margin: 15px 0;
+}
 
 .visible {
-	display: block;
+  display: block;
 }
- 
