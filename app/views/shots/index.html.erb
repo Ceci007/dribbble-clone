@@ -1,41 +1,55 @@
-<%= render 'hero' %>
-
 <section class="section">
   <div class="shots">
     <% @shots.each do |shot| %>
       <div class="shot-grid-item">
         <div class="shot-wrapper">
            
-        <%= link_to shot, class: "shot" do %>
+        <%= link_to shot, class: "shot" do %> <!-- inner-content -->
           <%= image_tag(shot.user_shot_url) %>
-          <div class="shot-data">
-            <h3 class="shot-title"><%= shot.title %></h3>
-            <div class="shot-description"><%= truncate(shot.description, length: 60) %></div>
-            <div class="shot-time">
+          <div class="shot-data"> <!-- overlay-content -->
+            <h3 class="shot-title has-text-weight-bold"><%= shot.title %></h3>
+            <p class="shot-description"><%= truncate(shot.description, length: 160) %></p>
+            <p class="shot-time">
               <%= time_ago_in_words(shot.created_at) %>
-            </div>
+            </p>
           </div>
         <% end %>
-         <nav class="level shot-analytics">
+         
+        <nav class="level shot-analytics">
           <div class="level-left"></div>
           <div class="level-right">
             <div class="level-item views data">
               <%= link_to shot do %>
                 <span class="icon"><i class="fa fa-eye"></i></span>
-                0
+                <%= shot.impressionist_count %>
               <% end %>
             </div>
             <div class="level-item comments data">
               <%= link_to shot do %>
                 <span class="icon"><i class="fa fa-comment"></i></span>
-                 0
+                 <%= shot.comments.count %>
               <% end %>
             </div>
             <div class="level-item likes">
-            <%= link_to '' do %>
-              <span class="icon"><i class="fa fa-heart"></i></span>
-              <span class="vote_count">0</span>
-            <% end %>
+              <% if user_signed_in? %>
+                
+                <% if current_user.liked? shot %>
+                  <%= link_to unlike_shot_path(shot), method: :put, class: "unlike_shot" do %>
+                    <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                    <span class="vote_count"><%= shot.get_likes.size %></span>
+                  <% end %>
+                <% else %>
+                      <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                        <span class="icon"><i class="fa fa-heart"></i></span>
+                        <span class="vote_count"><%= shot.get_likes.size %></span>
+                      <% end %>
+                    <% end %>
+                  <% else %>
+                  <%= link_to like_shot_path(shot), method: :put, class: "like_shot" do %>
+                    <span class="icon"><i class="fa fa-heart"></i></span>
+                    <span class="vote_count"><%= shot.get_likes.size %></span>
+                  <% end %>
+              <% end %>
             </div>
           </div>
         </nav>

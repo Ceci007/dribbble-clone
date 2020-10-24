@@ -28,6 +28,7 @@
    min-height: 100vh;
    background-color: #f4f4f4;
  }
+
  
  #drop_zone {
    position: relative;
@@ -71,10 +72,6 @@
  .notification:not(:last-child) {
    margin-bottom: 0;
  }
- 
- .visible {
-   display: block !important;
- }
 
  .file-input { visibility: hidden; }
 
@@ -90,9 +87,14 @@
  .image-centered {
    display: block;
    margin: 0 auto;
+   margin-bottom: 20px;
  }
 
  .my-10 {
    margin: 15px 0;
  }
+
+.visible {
+	display: block;
+}
  

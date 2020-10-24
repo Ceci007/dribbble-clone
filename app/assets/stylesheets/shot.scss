@@ -30,46 +30,76 @@
 	@media only screen and (max-width: 400px) {
 		grid-template-columns: 1fr;
 	}
-
 }
 .shot {
 	position: relative;
 	display: block;
 	color: #333 !important;
-
-	.shot-data {
-		display: none;
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		padding: 10px;
-		background: rgba(white, .9);
-		cursor: pointer;
-		.shot-title {
-			font-weight: bold;
-		}
-		.shot-description {
-			font-size: .9rem;
-		}
-		.shot-time {
-			font-size: .8rem;
-			padding-top: .5rem;
-		}
+  width: 265px;
+  height: 200px;
+	margin: 0 auto;
+	overflow: hidden;
+	
+	& img {
+		width: 100%;
+  	height: 100%;
+  	margin: 0 auto;
 	}
 }
 
+.shot-data {
+	position: absolute;
+  top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: none;
+	visibility: hidden;
+  text-align: justify;
+  background: rgba(255,255,255,0.8);
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	padding: 10px;
+
+	p, h3 {
+		color: #333;
+		text-align: left;
+	}
+	.shot-title {
+		font-weight: bold;
+	}
+	.shot-description {
+		font-size: .9rem;
+	}
+	.shot-time {
+		font-size: .8rem;
+		padding-top: .5rem;
+	}
+}
+
+.shot:hover .shot-data
+{
+	display: block;
+	visibility: visible;
+	padding: 10px;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
 .user-data {
-	display: flex;
 	padding: 1rem 0 0 0;
 }
 
 .user-name {
-	display: flex;
-	align-items: center;
-	margin: 0 10px;
-	margin-top: -4px;
+	display: inline-block;
+	position: relative;
+	top: -4px;
+	padding-left: 5px;
 }
 
 .user-thumb {
@@ -77,6 +107,11 @@
 	img {
 		border-radius: 50%;
 	}
+}
+
+.thumb {
+	display: block;
+	margin: 0 auto;
 }
 
 .by,
@@ -148,7 +183,7 @@
 
 .shot-full {
 	text-align: center;
-	img {
+	& img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;

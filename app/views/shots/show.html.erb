@@ -7,7 +7,7 @@
 				<div class="user-thumb">
 					<%= gravatar_image_tag(@shot.user.email.gsub('spam', 'mdeering'), alt: @shot.user.name, gravatar: { size: 40 }); %>
 				</div>
-				<div class="user-name has-text-weight-bold"><%= @shot.user.name %></div>
+				<div class="user-name has-text-weight-bold mr"><%= @shot.user.name %></div>
 				<div class="shot-time"><span class="has-text-grey-light">posted</span><span class="has-text-weight-semibold">
 					<%= verbose_date(@shot.created_at) %>
 				</span></div>
@@ -52,15 +52,31 @@
 				<div class="nav panel show-shot-analytics">
 					<div class="panel-block views data">
 						<span class="icon"><i class="fa fa-eye"></i></span>
-						0
+						<%= pluralize(@shot.impressionist_count, 'View') %>
 					</div>
 					<div class="panel-block comments data">
 						<span class="icon"><i class="fa fa-comment"></i></span>
-						0
+						<%= pluralize(@shot.comments.count, 'Comment')%>
 					</div>
 					<div class="panel-block likes data">
-          <span class="icon"><i class="fa fa-heart"></i></span>
-					  0
+						<% if user_signed_in? %>
+              <% if current_user.liked? @shot %>
+                <%= link_to unlike_shot_path(@shot), method: :put, class: "unlike_shot" do %>
+                  <span class="icon"><i class="fa fa-heart has-text-primary"></i></span>
+                  <span class="vote_count"><%= pluralize(@shot.get_likes.size, 'Like') %></span>
+                <% end %>
+              <% else %>
+                <%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+                  <span class="icon"><i class="fa fa-heart"></i></span>
+                  <span class="vote_count"><%= pluralize(@shot.get_likes.size, 'Like') %></span>
+                <% end %>
+              <% end %>
+            <% else %>
+                <%= link_to like_shot_path(@shot), method: :put, class: "like_shot" do %>
+                  <span class="icon"><i class="fa fa-heart"></i></span>
+                  <span class="vote_count"><%= pluralize(@shot.get_likes.size, 'Like') %></span>
+                <% end %>
+            <% end %>
 					</div>
 				</div>
 			</div>

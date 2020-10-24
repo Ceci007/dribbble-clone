@@ -31,10 +31,11 @@ gem 'devise', '~> 4.7', '>= 4.7.3'
 gem 'carrierwave', '~> 2.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
 gem "mini_magick"
-gem 'impressionist', '~> 1.6'
+gem 'impressionist', '~> 2.0'
+gem 'jquery', '~> 0.0.1'
 gem 'jquery-rails', '~> 4.4'
 gem 'gravatar_image_tag'
-gem 'acts_as_votable', '~> 0.11.1'
+gem 'acts_as_votable'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
