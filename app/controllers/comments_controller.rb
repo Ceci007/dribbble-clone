@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :destroy]
+  before_action :authenticate_user!, only: %i[create destroy]
   def create
     @shot = Shot.find(params[:shot_id])
     @comment = @shot.comments.create(comment_params)
@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
     redirect_to shot_path(@shot)
   end
 
-  private 
+  private
 
   def comment_params
     params.require(:comment).permit(:name, :response)

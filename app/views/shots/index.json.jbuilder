@@ -1,1 +1,1 @@
-json.array! @shots, partial: "shots/shot", as: :shot
+json.array! @shots, partial: 'shots/shot', as: :shot

@@ -1,1 +1,1 @@
-json.partial! "shots/shot", shot: @shot
+json.partial! 'shots/shot', shot: @shot
