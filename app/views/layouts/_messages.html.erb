@@ -1,0 +1,16 @@
+<% if flash[:notice] %>
+  <div class="container my-10">
+    <div class="notification is-primary global-notification" >
+      <p class="notice"><%= notice %></p>
+      <button class="delete" onclick="this.parentElement.style.display='none'" ></button>
+    </div>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="container my-10">
+    <div class="notification is-danger global-notification" >
+      <p class="alert"><%= alert %></p>
+      <button class="delete" onclick="this.parentElement.style.display='none'" ></button>
+    </div>
+  </div>
+<% end %>
