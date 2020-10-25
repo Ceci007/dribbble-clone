@@ -37,6 +37,7 @@ gem 'jquery', '~> 0.0.1'
 gem 'jquery-rails', '~> 4.4'
 gem 'mini_magick'
 gem 'simple_form', '~> 5.0', '>= 5.0.3'
+gem 'fog-aws'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
