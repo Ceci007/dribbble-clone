@@ -25,9 +25,12 @@ gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 gem 'acts_as_votable'
+gem 'aws-sdk-rails'
 gem 'bulma-rails', '~> 0.9.0'
 gem 'carrierwave', '~> 2.1'
+gem 'carrierwave-aws'
 gem 'devise', '~> 4.7', '>= 4.7.3'
+gem 'figaro'
 gem 'gravatar_image_tag'
 gem 'impressionist', '~> 2.0'
 gem 'jquery', '~> 0.0.1'
@@ -63,6 +66,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
