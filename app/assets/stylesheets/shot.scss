@@ -10,6 +10,7 @@
   border-radius: 2px;
   padding: 10px;
   background: white;
+  overflow: hidden;
 }
 
 .shots {
@@ -30,11 +31,11 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media only screen and (max-width: 800px) {
+  @media only screen and (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media only screen and (max-width: 400px) {
+  @media only screen and (max-width: 600px) {
     grid-template-columns: 1fr;
   }
 }
@@ -47,6 +48,7 @@
   height: 200px;
   margin: 0 auto;
   overflow: hidden;
+  border-radius: 10px;
 
   & img {
     width: 100%;
@@ -124,6 +126,7 @@
 .thumb {
   display: block;
   margin: 0 auto;
+  border-radius: 10px;
 }
 
 .by,
@@ -163,6 +166,7 @@
 
 .panel.show-shot-analytics {
   font-size: 0.9rem;
+  background-color: #fff;
 
   a { color: #333; }
 
@@ -178,9 +182,12 @@
 
 .shot-analytics,
 .panel.show-shot-analytics {
-  a:hover,
   .icon:hover {
-    color: rgba(170, 170, 170, 0.25);
+    color: #333 !important;
+  }
+
+  a:hover {
+    color: #333
   }
 }
 
@@ -207,10 +214,12 @@
 
 .shot-full {
   text-align: center;
+  overflow: hidden;
 
   & img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
 }

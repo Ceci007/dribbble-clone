@@ -17,8 +17,10 @@
     </div>
      <% if (user_signed_in? && (current_user.id == comment.user_id)) %>
       <div class="media-right">
-        <%= link_to 'Delete', [comment.shot, comment],
-                    method: :delete, class: "button is-danger text-bold", data: { confirm: 'Are you sure?' } %>
+        <%= link_to [comment.shot, comment],
+                    method: :delete, class: "transparent", data: { confirm: 'Are you sure?' } do %>
+          <span class='icon is-medium'><i class='fa fa-trash-o fa-2x' aria-hidden='true'></i></span>
+        <% end %>
       </div>
       <% end %>
   </article>
