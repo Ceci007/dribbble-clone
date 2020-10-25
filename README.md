@@ -13,11 +13,11 @@ Dribbble is an active design community where designers of all varieties post the
 - View counts/analytics
 - A custom responsive shot grid UI using CSS Grid
 
-![app screenshot 1](./screen-1.png)
+![app screenshot 1](./screenshot-1.png)
 
-![app screenshot 2](./screen-2.png)
+![app screenshot 2](./screenshot-2.png)
 
-![app screenshot 3](./screen-3.png)
+![app screenshot 3](./screenshot-3.png)
 
 ## 🔧 Built With these features
 - Ruby. v2.6.6
