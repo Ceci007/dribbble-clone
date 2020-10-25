@@ -1,0 +1,53 @@
+<nav class="navbar is-dark is-fixed-top" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <%= link_to root_path, class:"navbar-item" do %>
+      <h1 class="title is-5 has-text-white">Dribbble Clone</h1>
+    <% end  %>
+  <a class="navbar-burger burger" data-target="navbar">
+      <span></span>
+      <span></span>
+      <span></span>
+  </a>
+  </div>
+  
+  <div id='navbar' class="navbar-menu">
+
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <p class="control">
+            <%= link_to 'Shots', root_path , class:"button is-dark" %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="field is-grouped">
+          <% if user_signed_in? %>
+          <p class="control">
+            <%= link_to new_shot_path, class:"button is-primary"  do %>
+              <span class="icon is-small"><i class="fa fa-upload"></i></span>
+              <span>New Shot</span>
+            <% end %>
+          </p>
+          <p class="control">
+            <%= link_to current_user.name, edit_user_registration_path, class:"button is-dark" %>
+          </p>
+          <p class="control">
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class:"button is-dark" %>
+          </p>
+          <% else %>
+          <p class="control">
+              <%= link_to "Sign In", new_user_session_path, class:"button is-dark" %>
+          </p>
+          <p class="control">
+            <%= link_to "Sign up", new_user_registration_path, class:"button is-dark"%>
+          </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav> 
