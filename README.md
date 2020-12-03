@@ -1,7 +1,7 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
 #  🧐 dribbble-clone
-Microverse side project.
+This is a Microverse side project.
 
 Dribbble is an active design community where designers of all varieties post their "shots" of whatever it is they are working on. What was originally intended to become more of "show your progress" type of site has become more of a portfolio for up and coming designers as well as seasoned pros.
 
